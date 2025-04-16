@@ -9,7 +9,7 @@ import {
   CardTitle 
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Search, Beaker, Workflow, GitMerge, BarChart3, FileVolume, Workflow as FlaskWorkflow, ArrowRight, ExternalLink } from "lucide-react";
+import { Search, Beaker, Workflow, GitMerge, BarChart3, FileVolume, ArrowRight, ExternalLink } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
