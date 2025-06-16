@@ -10,7 +10,8 @@ import {
   BarChart, 
   User,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  Home
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Avatar } from "@/components/ui/avatar";
@@ -21,9 +22,15 @@ interface SidebarProps {
 
 const navItems = [
   { 
+    icon: Home, 
+    label: "首页", 
+    path: "/", 
+    description: "平台主页" 
+  },
+  { 
     icon: MessageSquare, 
     label: "ICMAgent", 
-    path: "/", 
+    path: "/agent", 
     description: "AI Assistant" 
   },
   { 
