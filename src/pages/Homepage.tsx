@@ -1,14 +1,10 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, BarChart3, Cpu, Search, MessageSquare, Sparkles, Zap, Database } from "lucide-react";
+import { ArrowRight, BarChart3, Cpu, Search, Zap, Database } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 
 const Homepage = () => {
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
-
   const products = [
     {
       id: 1,
@@ -67,63 +63,51 @@ const Homepage = () => {
               新一代集成电路材料智能设计平台 | 基于大语言模型驱动的材料研发与分析解决方案
             </p>
 
-            {/* Main Dialog Entry */}
-            <div className="mb-16">
-              <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-                <DialogTrigger asChild>
-                  <Button 
-                    size="lg" 
-                    className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-12 py-6 text-lg font-semibold rounded-2xl shadow-2xl shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300 transform hover:scale-105"
-                  >
-                    <MessageSquare className="mr-3 h-6 w-6" />
-                    集成电路材料语言模型
-                    <Sparkles className="ml-3 h-6 w-6 animate-pulse" />
-                  </Button>
-                </DialogTrigger>
-                <DialogContent className="sm:max-w-4xl bg-gray-900 border-gray-700 text-white">
-                  <DialogHeader>
-                    <DialogTitle className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                      集成电路材料智能助手
-                    </DialogTitle>
-                  </DialogHeader>
-                  <div className="py-6">
-                    <div className="bg-gray-800 rounded-lg p-6 mb-4">
-                      <p className="text-gray-300 mb-4">
-                        欢迎使用ICMat智能助手！我可以帮助您：
-                      </p>
-                      <div className="grid grid-cols-2 gap-4">
-                        <div className="flex items-center space-x-2">
-                          <Zap className="h-4 w-4 text-cyan-400" />
-                          <span className="text-sm">材料性能分析</span>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <Database className="h-4 w-4 text-emerald-400" />
-                          <span className="text-sm">工艺参数优化</span>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <Search className="h-4 w-4 text-purple-400" />
-                          <span className="text-sm">文献资料检索</span>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <BarChart3 className="h-4 w-4 text-blue-400" />
-                          <span className="text-sm">趋势预测分析</span>
-                        </div>
+            {/* AI Assistant Section */}
+            <div className="mb-16 max-w-4xl mx-auto">
+              <Card className="bg-gray-900/50 border-gray-700 backdrop-blur-sm">
+                <CardHeader>
+                  <CardTitle className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                    集成电路材料智能助手
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="bg-gray-800 rounded-lg p-6 mb-6">
+                    <p className="text-gray-300 mb-4">
+                      欢迎使用ICMat智能助手！我可以帮助您：
+                    </p>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="flex items-center space-x-2">
+                        <Zap className="h-4 w-4 text-cyan-400" />
+                        <span className="text-sm">材料性能分析</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <Database className="h-4 w-4 text-emerald-400" />
+                        <span className="text-sm">工艺参数优化</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <Search className="h-4 w-4 text-purple-400" />
+                        <span className="text-sm">文献资料检索</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <BarChart3 className="h-4 w-4 text-blue-400" />
+                        <span className="text-sm">趋势预测分析</span>
                       </div>
                     </div>
-                    <div className="flex space-x-4">
-                      <Link to="/agent" className="flex-1">
-                        <Button className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700">
-                          开始对话
-                          <ArrowRight className="ml-2 h-4 w-4" />
-                        </Button>
-                      </Link>
-                      <Button variant="outline" className="border-gray-600 text-gray-300 hover:bg-gray-800">
-                        查看示例
-                      </Button>
-                    </div>
                   </div>
-                </DialogContent>
-              </Dialog>
+                  <div className="flex space-x-4">
+                    <Link to="/agent" className="flex-1">
+                      <Button className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-lg py-6">
+                        开始对话
+                        <ArrowRight className="ml-2 h-5 w-5" />
+                      </Button>
+                    </Link>
+                    <Button variant="outline" className="border-gray-600 text-gray-300 hover:bg-gray-800 px-8">
+                      查看示例
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
 
             <div className="flex justify-center space-x-6">
@@ -241,7 +225,6 @@ const Homepage = () => {
             <Link to="/agent">
               <Button size="lg" className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 px-10 py-4 text-lg shadow-2xl shadow-cyan-500/25">
                 立即开始
-                <Sparkles className="ml-2 h-5 w-5" />
               </Button>
             </Link>
             <Button variant="outline" size="lg" className="border-gray-400 text-gray-300 hover:bg-white/10 px-10 py-4 text-lg">
